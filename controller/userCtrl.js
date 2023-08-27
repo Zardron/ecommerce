@@ -111,7 +111,7 @@ const logout = asyncHandler(async (req, res) => {
 
 // Get All Users
 const getAllUser = asyncHandler(async (req, res) => {
-  const foundUser = await User.find();
+  const foundUser = await User.find().populate("wishlist");
 
   if (foundUser) {
     res.json(foundUser);
